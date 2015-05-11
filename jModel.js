@@ -75,30 +75,3 @@
 
     window.Model = Model;
 }(window));
-
-$(document).on("click", "button[name=delete]", function (e) {
-    e.preventDefault();
-
-    var button = this,
-            id = this.data('id'),
-            name = this.data('name'),
-            callback = this.data('callback'),
-            request = Model.initialize();
-
-    request.delete({
-        action: name + '/delete/' + id,
-        callback: function (data) {
-            var opts = {
-                data: data,
-                element: button
-            }
-
-            $.each(data, function (i, item) {
-                opts.i = item;
-            });
-
-            callback.call(data);
-        }
-    });
-
-});

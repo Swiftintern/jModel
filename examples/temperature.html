@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fetching Temperature</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src=""></script>
+        <script type="text/javascript" src=""></script>
+    </head>
+    <body>
+        The Temperature is : <div id="output"></div>
+
+        <script type="text/javascript">
+            (function (window, Model) {
+                window.request = Model.initialize();
+            }(window, window.Model));
+            
+            $(document).ready(function (e) {
+                request.read({
+                    action: name + '/delete/' + id,
+                    callback: function (data) {
+
+                    }
+                });
+
+            });
+        </script>
+    </body>
+</html>
